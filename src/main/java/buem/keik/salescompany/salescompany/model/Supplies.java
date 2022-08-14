@@ -35,6 +35,17 @@ public class Supplies {
         this.updatedAt = updatedAt;
     }
 
+    public Supplies(String id, String name, int quantity, Supplies supplies, LocalDateTime date) {
+        this.id = id;
+        this.name = name;
+        this.quantity = quantity;
+        this.providerId = supplies.getProviderId();
+        this.detailsId = supplies.getDetailsId();
+        this.date = date;
+        this.createdAt = date;
+        this.updatedAt = date;
+    }
+
     public String getId() {
         return id;
     }
