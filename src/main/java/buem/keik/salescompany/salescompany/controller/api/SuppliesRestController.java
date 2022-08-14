@@ -1,9 +1,7 @@
 package buem.keik.salescompany.salescompany.controller.api;
 
 
-import buem.keik.salescompany.salescompany.model.Provider;
 import buem.keik.salescompany.salescompany.model.Supplies;
-import buem.keik.salescompany.salescompany.service.item.impls.ProviderServiceImpl;
 import buem.keik.salescompany.salescompany.service.item.impls.SuppliesServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
