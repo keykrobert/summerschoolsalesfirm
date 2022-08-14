@@ -3,7 +3,7 @@ package buem.keik.salescompany.salescompany.service.item.impls;
 
 
 import buem.keik.salescompany.salescompany.model.Provider;
-import buem.keik.salescompany.salescompany.repository.ItemFakeRepository;
+import buem.keik.salescompany.salescompany.repository.ProviderFakeRepository;
 import buem.keik.salescompany.salescompany.service.item.interfaces.IProviderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import java.util.List;
 public class ProviderServiceImpl implements IProviderService {
 
     @Autowired
-    ItemFakeRepository repository;
+    ProviderFakeRepository repository;
 
     @Override
     public Provider create(Provider provider) {

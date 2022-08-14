@@ -25,6 +25,17 @@ public class Details {
         this.currency = currency;
     }
 
+    public Details(String id, String name, String sku, double price, String comment, Currency currency, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.id = id;
+        this.name = name;
+        this.sku = sku;
+        this.price = price;
+        this.comment = comment;
+        this.currency = currency;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
     public String getId() {
         return id;
     }

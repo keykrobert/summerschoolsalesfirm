@@ -12,15 +12,15 @@ import java.util.List;
 import java.util.UUID;
 
 @Repository
-public class ItemFakeRepository {
+public class ProviderFakeRepository {
 
     private LocalDateTime now = LocalDateTime.now();
     private List<Provider> providers = new ArrayList<>(
             Arrays.asList(
-                    new Provider("1", "item1", " desc1", now, now),
-                    new Provider("2", "item2", " desc2", now, now),
-                    new Provider("3", "item3", " desc3", now, now),
-                    new Provider("4", "item4", " desc4", now, now)
+                    new Provider("1", "item1", "any Description", "Bratislava, 1", "0660386900", now, now),
+                    new Provider("2", "item2", "any Description2", "Bratislava, 2", "0660386900", now, now),
+                    new Provider("3", "item3", "any Description3", "Bratislava, 3", "0660386900", now, now),
+                    new Provider("4", "item4", "any Description4", "Bratislava, 4", "0660386900", now, now)
             ));
 
     public List<Provider> findAll() {
