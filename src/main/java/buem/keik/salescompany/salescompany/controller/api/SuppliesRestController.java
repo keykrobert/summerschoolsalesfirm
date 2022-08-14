@@ -2,7 +2,9 @@ package buem.keik.salescompany.salescompany.controller.api;
 
 
 import buem.keik.salescompany.salescompany.model.Provider;
+import buem.keik.salescompany.salescompany.model.Supplies;
 import buem.keik.salescompany.salescompany.service.item.impls.ProviderServiceImpl;
+import buem.keik.salescompany.salescompany.service.item.impls.SuppliesServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,15 +15,15 @@ import java.util.List;
 public class SuppliesRestController {
 
     @Autowired
-    ProviderServiceImpl service;
+    SuppliesServiceImpl service;
 
     @GetMapping("")
-    public List<Provider> showAll() {
+    public List<Supplies> showAll() {
         return service.getAll();
     }
 
     @GetMapping("/{id}")
-    public Provider showOne(@PathVariable String id) {
+    public Supplies showOne(@PathVariable String id) {
         return service.get(id);
     }
 
@@ -31,13 +33,13 @@ public class SuppliesRestController {
     }
 
     @PostMapping()
-    public Provider insertOne(@RequestBody Provider provider) {
-        return service.create(provider);
+    public Supplies insertOne(@RequestBody Supplies supplies) {
+        return service.create(supplies);
     }
 
     @PutMapping()
-    public Provider updateOne(@RequestBody Provider provider) {
-        return service.update(provider);
+    public Supplies updateOne(@RequestBody Supplies supplies) {
+        return service.update(supplies);
     }
 
 

@@ -6,9 +6,10 @@ import buem.keik.salescompany.salescompany.model.Supplies;
 import buem.keik.salescompany.salescompany.repository.SuppliesFakeRepository;
 import buem.keik.salescompany.salescompany.service.item.interfaces.ISuppliesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class SuppliesServiceImpl implements ISuppliesService {
     @Autowired
     SuppliesFakeRepository repository;
