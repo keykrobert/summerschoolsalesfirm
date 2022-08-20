@@ -21,6 +21,8 @@
             <th> ID </th>
             <th> Name</th>
             <th> Description</th>
+            <th> Address</th>
+            <th> Phone number</th>
             <th> Created At</th>
             <th> Updated At</th>
             <th> DELETE</th>
@@ -32,6 +34,8 @@
                     <td>${provider.id}</td>
                     <td>${provider.name}</td>
                     <td>${provider.description}</td>
+                    <td>${provider.address}</td>
+                    <td>${provider.telephone}</td>
                     <td>${provider.createdAt}</td>
                     <td>${provider.updatedAt?if_exists}</td>
                     <td><a href="/ui/v1/items/del/${provider.id}"><button type="button" class="btn btn-danger">Del</button></a></td>
