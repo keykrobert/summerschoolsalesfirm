@@ -37,11 +37,13 @@ public class ProviderServiceImpl implements IProviderService {
 
     @Override
     public Provider create(Provider provider) {
+        provider.setCreatedAt(LocalDateTime.now());
         return repository.save(provider);
     }
 
     @Override
     public Provider update(Provider provider) {
+        provider.setUpdatedAt(LocalDateTime.now());
         return repository.save(provider);
     }
 

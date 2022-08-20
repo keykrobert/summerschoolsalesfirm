@@ -35,15 +35,12 @@ public class ProviderUIController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addItem(@ModelAttribute("form") ProviderForm form) {
+    public String addItem(@ModelAttribute("form") ProviderForm form){
         Provider provider = new Provider();
-        provider.setId(form.getId());
         provider.setName(form.getName());
         provider.setDescription(form.getDescription());
-        provider.setAddress(form.getAddress());
-        provider.setTelephone(form.getTelephone());
-        provider.setCreatedAt(form.getCreatedAt());
-        provider.setUpdatedAt(form.getUpdatedAt());
+        provider.setTelephone(form.getDescription());
+        provider.setAddress(form.getDescription());
         service.create(provider);
         return "redirect:/ui/v1/items/";
     }
