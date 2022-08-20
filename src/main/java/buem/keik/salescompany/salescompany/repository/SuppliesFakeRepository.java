@@ -19,7 +19,7 @@ public class SuppliesFakeRepository {
     private Supplies suppliesObject;
     private List<Supplies> supplies = new ArrayList<>(
             Arrays.asList(
-                    new Supplies("1", "name1", 25, suppliesObject, now)
+                  //  new Supplies("1", "name1", 25, suppliesObject, now)
             ));
 
     public List<Supplies> findAll() {

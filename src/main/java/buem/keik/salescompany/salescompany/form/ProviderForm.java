@@ -1,16 +1,11 @@
+package buem.keik.salescompany.salescompany.form;
 
-package buem.keik.salescompany.salescompany.model;
+import buem.keik.salescompany.salescompany.model.Provider;
 
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.lang.annotation.Documented;
 import java.time.LocalDateTime;
 import java.util.Objects;
-@Document
-public class Provider {
-    @Id
+
+public class ProviderForm {
     private String id;
     private String name;
     private String description;
@@ -19,17 +14,17 @@ public class Provider {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public Provider() {
+    public ProviderForm() {
     }
 
-    public Provider(String name, String description, String address, String telephone) {
+    public ProviderForm(String name, String description, String address, String telephone) {
         this.name = name;
         this.description = description;
         this.address = address;
         this.telephone = telephone;
     }
 
-    public Provider(String id, String name, String description, String address, String telephone, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public ProviderForm(String id, String name, String description, String address, String telephone, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -93,19 +88,6 @@ public class Provider {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Provider provider = (Provider) o;
-        return id.equals(provider.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
     }
 
     @Override
