@@ -1,13 +1,10 @@
-package buem.keik.salescompany.salescompany.model;
+package buem.keik.salescompany.salescompany.form;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
+import buem.keik.salescompany.salescompany.model.Currency;
 import java.time.LocalDateTime;
-import java.util.Objects;
-@Document
-public class Details {
-    @Id
+
+
+public class DetailsForm {
     private String id;
     private String name;
     private String sku;
@@ -18,10 +15,10 @@ public class Details {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public Details() {
+    public DetailsForm() {
     }
 
-    public Details(String name, String sku, double price, String comment, Currency currency) {
+    public DetailsForm(String name, String sku, double price, String comment, Currency currency) {
         this.name = name;
         this.sku = sku;
         this.price = price;
@@ -29,7 +26,7 @@ public class Details {
         this.currency = currency;
     }
 
-    public Details(String id, String name, String sku, double price, String comment, Currency currency, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public DetailsForm(String id, String name, String sku, double price, String comment, Currency currency, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
         this.sku = sku;
@@ -102,19 +99,6 @@ public class Details {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Details details = (Details) o;
-        return id.equals(details.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
     }
 
     @Override

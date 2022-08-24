@@ -20,35 +20,44 @@
             <thead>
             <th> ID </th>
             <th> Name</th>
-            <th> Description</th>
-            <th> Address</th>
-            <th> Phone number</th>
+
+            <th> SKU</th>
+            <th> Price</th>
+            <th> Comment</th>
+            <th> Currency</th>
+
+
             <th> Created At</th>
             <th> Updated At</th>
             <th> DELETE</th>
             <th> EDIT</th>
             </thead>
             <tbody
-            <#list providers as provider >
+            <#list details as detail >
                 <tr>
-                    <td>${provider.id}</td>
-                    <td>${provider.name}</td>
-                    <td>${provider.description}</td>
-                    <td>${provider.address}</td>
-                    <td>${provider.telephone}</td>
-                    <td>${provider.createdAt}</td>
-                    <td>${provider.updatedAt?if_exists}</td>
-                    <td><a href="/ui/v1/items/del/${provider.id}"><button type="button" class="btn btn-danger">Del</button></a></td>
-                    <td><a href="/ui/v1/items/edit/${provider.id}"><button type="button" class="btn btn-info">Edit</button></a></td>
+                    <td>${detail.id}</td>
+                    <td>${detail.name}</td>
+
+                    <td>${detail.sku}</td>
+                    <td>${detail.price}</td>
+                    <td>${detail.comment}</td>
+                    <td>${detail.currency}</td>
+
+
+                    <td>${detail.createdAt}</td>
+                    <td>${detail.updatedAt?if_exists}</td>
+                    <td><a href="/ui/v1/details/del/${detail.id}"><button type="button" class="btn btn-danger">Del</button></a></td>
+                    <td><a href="/ui/v1/details/edit/${detail.id}"><button type="button" class="btn btn-info">Edit</button></a></td>
                 </tr>
             </#list>
             </tbody>
 
 
         </table>
+
     </div>
 </div>
 
-<a href="/ui/v1/items/add">CREATE</a>
+<a href="/ui/v1/details/add">CREATE</a>
 </body>
 </html>

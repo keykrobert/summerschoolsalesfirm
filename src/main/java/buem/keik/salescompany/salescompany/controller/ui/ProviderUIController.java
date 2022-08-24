@@ -20,7 +20,7 @@ public class ProviderUIController {
     @GetMapping("")
     public String showAll(Model model) {
         model.addAttribute("providers", service.getAll());
-        return "provider";
+        return "provider/index";
     }
 
     @GetMapping("/del/{id}")
@@ -33,7 +33,7 @@ public class ProviderUIController {
     public String addItem(Model model) {
         ProviderForm itemForm = new ProviderForm();
         model.addAttribute("form", itemForm);
-        return "addProvider";
+        return "provider/addProvider";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
@@ -59,7 +59,7 @@ public class ProviderUIController {
         providerForm.setUpdatedAt(providerToUpdate.getUpdatedAt());
         providerForm.setCreatedAt(providerToUpdate.getCreatedAt());
         model.addAttribute("form", providerForm);
-        return "updateProvider";
+        return "provider/updateProvider";
     }
 
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
