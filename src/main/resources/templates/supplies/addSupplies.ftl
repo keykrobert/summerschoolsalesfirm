@@ -14,13 +14,14 @@
         <form name="item" action="" method="POST">
             name:<@spring.formInput "form.name" "" "text" />
             <br>
-            SKU:<@spring.formInput "form.sku" "" "text" />
+            providerId:<@spring.formInput "form.providerId" "" "text" />
             <br>
-            Price:<@spring.formInput "form.price" "" "text" />
+            detailsId:<@spring.formInput "form.detailsId" "" "text" />
             <br>
-            Comment:<@spring.formInput "form.comment" "" "text" />
+            quantity:<@spring.formInput "form.quantity" "" "number" />
             <br>
-            Currency:<@spring.formSingleSelect "form.currency", currency "" />
+            <br>
+
             <br>
             <input type="submit" value="Create">
 

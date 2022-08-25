@@ -1,27 +1,24 @@
-package buem.keik.salescompany.salescompany.model;
+package buem.keik.salescompany.salescompany.form;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import buem.keik.salescompany.salescompany.model.Supplies;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-@Document
-public class Supplies {
-    @Id
+public class SuppliesForm {
     private String id;
     private String name;
-    private Provider providerId;
-    private Details detailsId;
+    private String providerId;
+    private String detailsId;
     private int quantity;
     private LocalDateTime date;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public Supplies() {
+    public SuppliesForm() {
     }
 
-    public Supplies(String name, Provider providerId, Details detailsId, int quantity, LocalDateTime date) {
+    public SuppliesForm(String name, String providerId, String detailsId, int quantity, LocalDateTime date) {
         this.name = name;
         this.providerId = providerId;
         this.detailsId = detailsId;
@@ -29,7 +26,7 @@ public class Supplies {
         this.date = date;
     }
 
-    public Supplies(String id, String name, Provider providerId, Details detailsId, int quantity, LocalDateTime date, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public SuppliesForm(String id, String name, String providerId, String detailsId, int quantity, LocalDateTime date, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.name = name;
         this.providerId = providerId;
@@ -38,17 +35,6 @@ public class Supplies {
         this.date = date;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-    }
-
-    public Supplies(String id, String name, int quantity, Supplies supplies, LocalDateTime date) {
-        this.id = id;
-        this.name = name;
-        this.quantity = quantity;
-        this.providerId = supplies.getProviderId();
-        this.detailsId = supplies.getDetailsId();
-        this.date = date;
-        this.createdAt = date;
-        this.updatedAt = date;
     }
 
     public String getId() {
@@ -67,19 +53,19 @@ public class Supplies {
         this.name = name;
     }
 
-    public Provider getProviderId() {
+    public String getProviderId() {
         return providerId;
     }
 
-    public void setProviderId(Provider providerId) {
+    public void setProviderId(String providerId) {
         this.providerId = providerId;
     }
 
-    public Details getDetailsId() {
+    public String getDetailsId() {
         return detailsId;
     }
 
-    public void setDetailsId(Details detailsId) {
+    public void setDetailsId(String detailsId) {
         this.detailsId = detailsId;
     }
 
@@ -115,18 +101,6 @@ public class Supplies {
         this.updatedAt = updatedAt;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Supplies supplies = (Supplies) o;
-        return id.equals(supplies.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 
     @Override
     public String toString() {

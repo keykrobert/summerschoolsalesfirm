@@ -36,6 +36,8 @@ public class DetailUIController {
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addItem(Model model) {
         DetailsForm detailsForm = new DetailsForm();
+        var currency = Currency.values();
+        model.addAttribute("currency", currency);
         model.addAttribute("form", detailsForm);
         return "detail/addDetail";
     }
@@ -66,6 +68,8 @@ public class DetailUIController {
 
         detailsForm.setUpdatedAt(detailsToUpdate.getUpdatedAt());
         detailsForm.setCreatedAt(detailsToUpdate.getCreatedAt());
+        var currency = Currency.values();
+        model.addAttribute("currency", currency);
         model.addAttribute("form", detailsForm);
         return "detail/updateDetail";
     }

@@ -6,7 +6,7 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Update detail</h1>
+<h1>Update item</h1>
 
 <div>
 
@@ -16,13 +16,11 @@
             <br>
             name:<@spring.formInput "form.name" "" "text" />
             <br>
-            SKU:<@spring.formInput "form.sku" "" "text" />
+            providerId:<@spring.formInput "form.providerId" "" "text" />
             <br>
-            Price:<@spring.formInput "form.price" "" "text" />
+            detailsId:<@spring.formInput "form.detailsId" "" "text" />
             <br>
-            Comment:<@spring.formInput "form.comment" "" "text" />
-            <br>
-            Currency:<@spring.formSingleSelect "form.currency", currency "" />
+            quantity:<@spring.formInput "form.quantity" "" "number" />
             <br>
             created :<@spring.formInput "form.createdAt" "" "date" />
             <br>
