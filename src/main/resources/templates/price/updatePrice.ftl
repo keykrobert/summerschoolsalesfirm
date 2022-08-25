@@ -28,29 +28,36 @@
     </nav>
 </head>
 <body>
+<h1>Update item</h1>
 
-<h1>Creation</h1>
+<div>
 
-<form name="book" action="" method="POST">
-    <div class="mb-3" style="width: 50%">
-        <label for="exampleInputEmail1" class="form-label">Provider name</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formInput "form.name" "" "text" />
-    </div>
-    <div class="mb-3" style="width: 50%">
-        <label for="exampleInputEmail1" class="form-label">Description</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formInput "form.description" "" "text" />
-    </div>
-    <div class="mb-3" style="width: 50%">
-        <label for="exampleInputEmail1" class="form-label">Address</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formInput "form.address" "" "text" />
-    </div>
-    <div class="mb-3" style="width: 50%">
-        <label for="exampleInputEmail1" class="form-label">Phone number</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formInput "form.telephone" "" "text" />
-    </div>
-    <button type="submit" class="btn btn-primary">Create</button>
-</form>
+    <fieldset>
+        <form name="item" action="" method="POST">
+            id:<@spring.formInput "form.id" "" "text" />
+            <br>
+            name:<@spring.formInput "form.name" "" "text" />
+            <br>
+            description:<@spring.formInput "form.description" "" "text" />
+            <br>
+            address:<@spring.formInput "form.address" "" "text" />
+            <br>
+            telephone:<@spring.formInput "form.telephone" "" "text" />
+            <br>
+            created :<@spring.formInput "form.createdAt" "" "date" />
+            <br>
+            updated :<@spring.formInput "form.updatedAt" "" "date" />
+            <br>
 
+            <input type="submit" value="Save">
+
+        </form>
+
+    </fieldset>
+
+
+
+</div>
 
 </body>
 </html>

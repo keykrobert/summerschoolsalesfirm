@@ -3,33 +3,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Create supplies</title>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/ui/v1/items/">Providers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ui/v1/details/">Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ui/v1/supplies/">Supplies</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </head>
 <body>
-<h1>Add new item</h1>
 
-<div>
+<h1>Creation</h1>
 
-    <fieldset>
-        <form name="item" action="" method="POST">
-            name:<@spring.formInput "form.name" "" "text" />
-            <br>
-            SKU:<@spring.formInput "form.sku" "" "text" />
-            <br>
-            Price:<@spring.formInput "form.price" "" "text" />
-            <br>
-            Comment:<@spring.formInput "form.comment" "" "text" />
-            <br>
-            Currency:<@spring.formSingleSelect "form.currency", currency "" />
-            <br>
-            <input type="submit" value="Create">
-
-        </form>
-
-    </fieldset>
-
-
-</div>
+<form name="book" action="" method="POST">
+    <div class="mb-3" style="width: 50%">
+        <label for="exampleInputEmail1" class="form-label">Provider name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formInput "form.name" "" "text" />
+    </div>
+    <div class="mb-3" style="width: 50%">
+        <label for="exampleInputEmail1" class="form-label">SKU</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formInput "form.sku" "" "text" />
+    </div>
+    <div class="mb-3" style="width: 50%">
+        <label for="exampleInputEmail1" class="form-label">Price</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formInput "form.price" "" "text" />
+    </div>
+    <div class="mb-3" style="width: 50%">
+        <label for="exampleInputEmail1" class="form-label">Comment</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formInput "form.comment" "" "text" />
+    </div><div class="mb-3" style="width: 50%">
+        <label for="exampleInputEmail1" class="form-label">Comment</label>
+        <select class="form-select" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formSingleSelect "form.currency", currency "" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
 
 </body>
 </html>

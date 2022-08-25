@@ -1,4 +1,3 @@
-<#import "/spring.ftl" as spring/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,28 +28,45 @@
 </head>
 <body>
 
-<h1>Creation</h1>
+<h1>Hello, items! </h1>
+<div class="table-center">
+    <div class="table-center" style="width: 80%; display: flex; align-content: center">
+        <table class="table table-dark table-striped">
+            <thead>
+            <th> ID</th>
+            <th> Price</th>
+            <th> SuppliesID</th>
+            <th>Details Id</th>
+            <th> Created At</th>
+            <th> Updated At</th>
+            <th> DELETE</th>
+            <th> EDIT</th>
+            </thead>
+            <tbody
+            <#list prices as price >
+                <tr>
+                    <td>${price.id}</td>
+                    <td>${price.price}</td>
+                    <td>${price.supplies.name}</td>
+                    <td>${price.details.id}</td>
+                    <td>${price.createdAt}</td>
+                    <td>${price.updatedAt?if_exists}</td>
+                    <td><a href="/ui/v1/prices/del/${price.id}">
+                            <button type="button" class="btn btn-danger">Del</button>
+                        </a></td>
+                    <td><a href="/ui/v1/prices/edit/${price.id}">
+                            <button type="button" class="btn btn-info">Edit</button>
+                        </a></td>
+                </tr>
+            </#list>
+            </tbody>
 
-<form name="book" action="" method="POST">
-    <div class="mb-3" style="width: 50%">
-        <label for="exampleInputEmail1" class="form-label">Provider name</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formInput "form.name" "" "text" />
-    </div>
-    <div class="mb-3" style="width: 50%">
-        <label for="exampleInputEmail1" class="form-label">Description</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formInput "form.description" "" "text" />
-    </div>
-    <div class="mb-3" style="width: 50%">
-        <label for="exampleInputEmail1" class="form-label">Address</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formInput "form.address" "" "text" />
-    </div>
-    <div class="mb-3" style="width: 50%">
-        <label for="exampleInputEmail1" class="form-label">Phone number</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formInput "form.telephone" "" "text" />
-    </div>
-    <button type="submit" class="btn btn-primary">Create</button>
-</form>
 
+        </table>
 
+    </div>
+</div>
+
+<a href="/ui/v1/prices/add">CREATE</a>
 </body>
 </html>

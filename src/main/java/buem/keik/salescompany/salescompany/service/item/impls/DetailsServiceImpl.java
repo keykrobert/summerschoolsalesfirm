@@ -39,6 +39,8 @@ public class DetailsServiceImpl implements IDetailsService {
 
     @Override
     public Details update(Details details) {
+        PriceServiceImpl priceService = new PriceServiceImpl();
+//        priceService.updatePriceDetail(details);
         return repository.save(details);
     }
 

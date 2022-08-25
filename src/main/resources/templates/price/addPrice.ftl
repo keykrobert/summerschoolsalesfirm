@@ -28,29 +28,26 @@
     </nav>
 </head>
 <body>
+<h1>Add new item</h1>
 
-<h1>Creation</h1>
+<div>
 
-<form name="book" action="" method="POST">
-    <div class="mb-3" style="width: 50%">
-        <label for="exampleInputEmail1" class="form-label">Provider name</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formInput "form.name" "" "text" />
-    </div>
-    <div class="mb-3" style="width: 50%">
-        <label for="exampleInputEmail1" class="form-label">Description</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formInput "form.description" "" "text" />
-    </div>
-    <div class="mb-3" style="width: 50%">
-        <label for="exampleInputEmail1" class="form-label">Address</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formInput "form.address" "" "text" />
-    </div>
-    <div class="mb-3" style="width: 50%">
-        <label for="exampleInputEmail1" class="form-label">Phone number</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" <@spring.formInput "form.telephone" "" "text" />
-    </div>
-    <button type="submit" class="btn btn-primary">Create</button>
-</form>
+    <fieldset>
+        <form name="item" action="" method="POST">
+            price:<@spring.formInput "form.name" "" "text" />
+            <br>
+            Supplies :<@spring.formSingleSelect "form.names" names "" />
+            <br>
+            <br>
+            <input type="submit" value="Create">
 
+        </form>
+
+    </fieldset>
+
+
+
+</div>
 
 </body>
 </html>
