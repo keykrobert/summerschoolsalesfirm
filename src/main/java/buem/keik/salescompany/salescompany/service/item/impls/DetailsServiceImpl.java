@@ -19,9 +19,7 @@ public class DetailsServiceImpl implements IDetailsService {
     private LocalDateTime now = LocalDateTime.now();
     private List<Details> details = new ArrayList<>(
             Arrays.asList(
-                    new Details("1","name1", "sku1", 14, "commenyt", Currency.EUR, now, now),
-                    new Details("2","name2", "sku2", 15, "commenyt2", Currency.EUR, now, now),
-                    new Details("3","name3", "sku3", 16, "commenyt3", Currency.EUR, now, now)
+                    new Details("1","Motor", "tr2452", 14, "very expensive", Currency.EUR, now, now)
             ));
 
     @PostConstruct

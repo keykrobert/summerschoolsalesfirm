@@ -20,10 +20,7 @@ public class ProviderServiceImpl implements IProviderService {
 
     private List<Provider> providers = new ArrayList<>(
             Arrays.asList(
-                    new Provider("1", "item1", "any Description", "Bratislava, 1", "0660386900", now, now),
-                    new Provider("2", "item2", "any Description2", "Bratislava, 2", "0660386900", now, now),
-                    new Provider("3", "item3", "any Description3", "Bratislava, 3", "0660386900", now, now),
-                    new Provider("4", "item4", "any Description4", "Bratislava, 4", "0660386900", now, now)
+                    new Provider("1", "Prom-complect", "bearing", "Bratislava, 1", "0660386900", now, now)
             ));
 
     @PostConstruct

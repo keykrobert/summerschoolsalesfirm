@@ -29,7 +29,7 @@
 </head>
 <body>
 
-<h1>Creation</h1>
+<h1>Create supplies</h1>
 
 
 <form name="issuedBook" action="" method="POST" style="align-content: center">
